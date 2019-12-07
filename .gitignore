@@ -103,6 +103,9 @@ dist
 # TernJS port file
 .tern-port
 
+# Parcel
+.parcel-cache
+
 # TypeScript output
 src/**/*.d.ts
 src/**/*.js
