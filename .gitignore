@@ -103,5 +103,7 @@ dist
 # TernJS port file
 .tern-port
 
+# TypeScript output
+src/**/*.d.ts
 src/**/*.js
 src/**/*.js.map
