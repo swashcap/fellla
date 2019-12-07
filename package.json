@@ -2,9 +2,19 @@
   "name": "fellla",
   "version": "0.0.1",
   "description": "Experimentation with Fela",
-  "main": "index.js",
+  "main": "src/index.ts",
   "repository": "https://github.com/swashcap/fellla",
   "author": "Cory Reed",
   "license": "MIT",
-  "private": true
+  "private": true,
+  "devDependencies": {
+    "@commitlint/cli": "^8.2.0",
+    "@commitlint/config-conventional": "^8.2.0",
+    "husky": "^3.1.0",
+    "lint-staged": "^9.5.0",
+    "prettier": "^1.19.1"
+  },
+  "scripts": {
+    "format": "prettier --write '*.js' 'src/**/*.{ts,tsx}'"
+  }
 }
