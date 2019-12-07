@@ -8,10 +8,14 @@
   "private": true,
   "dependencies": {
     "@babel/runtime": "^7.7.5",
-    "preact": "^10.0.5"
+    "fela": "^11.0.2",
+    "fela-bindings": "^11.0.2",
+    "preact": "^10.0.5",
+    "preact-fela": "^11.0.2"
   },
   "devDependencies": {
     "@babel/plugin-transform-runtime": "^7.7.5",
+    "@babel/plugin-transform-typescript": "^7.7.4",
     "@babel/preset-env": "^7.7.5",
     "@babel/preset-react": "^7.7.4",
     "@commitlint/cli": "^8.2.0",
@@ -28,7 +32,10 @@
     "build:parcel": "parcel build src/index.html",
     "build:ts": "tsc --noEmit",
     "clean": "./scripts/clean.sh",
-    "format": "prettier --write '*.js' 'src/**/*.{html,ts,tsx}'",
+    "format": "prettier --write '*.js' '{src,types}/**/*.{html,ts,tsx}'",
     "start": "parcel src/index.html"
+  },
+  "alias": {
+    "preact-context": "preact"
   }
 }

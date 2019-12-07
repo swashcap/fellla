@@ -1,6 +1,13 @@
 {
   "plugins": [
-    "@babel/plugin-transform-runtime"
+    "@babel/plugin-transform-runtime",
+    [
+      "@babel/plugin-transform-typescript",
+      {
+        "isTSX": true,
+        "jsxPragma": "h"
+      }
+    ]
   ],
   "presets": [
     "@babel/preset-env",
