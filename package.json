@@ -27,6 +27,7 @@
     "build": "run-s build:ts build:parcel",
     "build:parcel": "parcel build src/index.html",
     "build:ts": "tsc --noEmit",
+    "clean": "./scripts/clean.sh",
     "format": "prettier --write '*.js' 'src/**/*.{html,ts,tsx}'",
     "start": "parcel src/index.html"
   }
