@@ -1,0 +1,10 @@
+{
+  "name": "fellla",
+  "version": "0.0.1",
+  "description": "Experimentation with Fela",
+  "main": "index.js",
+  "repository": "https://github.com/swashcap/fellla",
+  "author": "Cory Reed",
+  "license": "MIT",
+  "private": true
+}
