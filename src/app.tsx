@@ -3,14 +3,14 @@ import { ThemeContext } from 'preact-fela';
 
 import { Heading } from './Heading';
 import { RendererProvider } from './RendererProvider';
-import { renderer } from './renderer';
+import { getRenderer } from './getRenderer';
 import { theme } from './theme';
 
 const appEl = document.getElementById('app');
 
 if (appEl) {
   render(
-    <RendererProvider renderer={renderer}>
+    <RendererProvider renderer={getRenderer()}>
       <ThemeContext.Provider value={theme}>
         <Heading>Hello, world!</Heading>
       </ThemeContext.Provider>
