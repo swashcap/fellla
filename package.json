@@ -20,12 +20,15 @@
     "@babel/preset-react": "^7.7.4",
     "@commitlint/cli": "^8.2.0",
     "@commitlint/config-conventional": "^8.2.0",
+    "babel-loader": "^8.0.6",
     "husky": "^3.1.0",
     "lint-staged": "^9.5.0",
     "npm-run-all": "^4.1.5",
     "parcel": "^2.0.0-alpha.3.2",
     "prettier": "^1.19.1",
-    "typescript": "^3.7.3"
+    "react-styleguidist": "^10.2.1",
+    "typescript": "^3.7.3",
+    "webpack": "^4.41.2"
   },
   "scripts": {
     "build": "run-s build:ts build:parcel",
@@ -33,7 +36,8 @@
     "build:ts": "tsc --noEmit",
     "clean": "./scripts/clean.sh",
     "format": "prettier --write '*.js' '{src,types}/**/*.{html,ts,tsx}'",
-    "start": "parcel src/index.html"
+    "start": "parcel src/index.html",
+    "styleguide": "styleguidist server"
   },
   "alias": {
     "preact-context": "preact"
