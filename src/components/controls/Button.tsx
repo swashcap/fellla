@@ -2,6 +2,7 @@ import { JSX, h } from 'preact';
 import { createComponent } from 'preact-fela';
 import { Text } from '../text/Text';
 import { AppTheme } from '../../theme';
+import { getFocusStyles } from '../../styles/focus';
 
 export type ButtonProps = JSX.HTMLAttributes<HTMLButtonElement>;
 
@@ -16,6 +17,8 @@ export const Button = createComponent(
       font: 'inherit',
       margin: 0,
       padding: `${theme.spacing.small} ${theme.spacing.normal}`,
+
+      ':focus': getFocusStyles(theme),
     };
   },
   ({ children, ...rest }: ButtonProps) => (

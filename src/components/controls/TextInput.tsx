@@ -1,6 +1,7 @@
 import { JSX } from 'preact';
 import { createComponent } from 'preact-fela';
 import { AppTheme } from '../../theme';
+import { getFocusStyles } from '../../styles/focus';
 
 export type TextInputProps = JSX.HTMLAttributes<HTMLInputElement>;
 
@@ -23,11 +24,7 @@ export const TextInput = createComponent<TextInputProps>(
       color: theme.colors.disabled,
     },
 
-    ':focus': {
-      boxShadow: `0 0 0 2px ${theme.colors.accent}`,
-      borderColor: theme.colors.accent,
-      outline: 'none',
-    },
+    ':focus': getFocusStyles(theme),
   }),
   'input',
   ['placeholder', 'value']
