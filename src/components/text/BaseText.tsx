@@ -2,12 +2,14 @@ import { FunctionComponent, JSX } from 'preact';
 import { createComponent } from 'preact-fela';
 import { AppTheme, AppThemeTextSizes } from '../../theme';
 
-// Fela's `extend` doesn't work for composition, so work from a private
-// `BaseText` that exposes props
-export const BaseText: FunctionComponent<JSX.HTMLAttributes & {
+interface BaseTextProps extends JSX.HTMLAttributes {
   color?: string;
   fontSize?: AppThemeTextSizes;
-}> = createComponent(
+}
+
+// Fela's `extend` doesn't work for composition, so work from a private
+// `BaseText` that exposes props
+export const BaseText = createComponent<BaseTextProps>(
   ({
     color,
     fontSize,

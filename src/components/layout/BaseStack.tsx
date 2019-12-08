@@ -24,7 +24,7 @@ export interface BaseStackProps extends JSX.HTMLAttributes<HTMLDivElement> {
 /**
  * A primitive stacking component.
  */
-export const BaseStack: FunctionComponent<BaseStackProps> = connect({
+export const BaseStack = connect<BaseStackProps>({
   item: ({
     direction,
     spacing,

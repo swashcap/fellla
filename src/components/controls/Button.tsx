@@ -5,7 +5,7 @@ import { AppTheme } from '../../theme';
 
 export type ButtonProps = JSX.HTMLAttributes<HTMLButtonElement>;
 
-export const Button: FunctionComponent<ButtonProps> = createComponent(
+export const Button = createComponent(
   ({ disabled, theme }: ButtonProps & { theme: AppTheme }) => {
     return {
       background: disabled ? theme.colors.disabled : theme.colors.accent,
