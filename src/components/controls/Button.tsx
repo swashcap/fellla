@@ -1,6 +1,6 @@
-import { h, FunctionComponent, JSX } from 'preact';
+import { JSX, h } from 'preact';
 import { createComponent } from 'preact-fela';
-import { BaseText } from '../text/BaseText';
+import { Text } from '../text/Text';
 import { AppTheme } from '../../theme';
 
 export type ButtonProps = JSX.HTMLAttributes<HTMLButtonElement>;
@@ -20,7 +20,7 @@ export const Button = createComponent(
   },
   ({ children, ...rest }: ButtonProps) => (
     <button type="button" {...rest}>
-      <BaseText color="inherit">{children}</BaseText>
+      <Text color="inherit">{children}</Text>
     </button>
   )
 );

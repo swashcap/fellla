@@ -1,6 +1,6 @@
 import { JSX, h, FunctionComponent } from 'preact';
-import { BaseText } from './BaseText';
+import { Text } from './Text';
 
 export const Heading: FunctionComponent<JSX.HTMLAttributes> = props => (
-  <BaseText as="h1" fontSize="large" {...props} />
+  <Text as="h1" fontSize="large" {...props} />
 );
