@@ -39,7 +39,8 @@
     "clean": "./scripts/clean.sh",
     "format": "prettier --write '*.js' '{src,types}/**/*.{html,ts,tsx}'",
     "start": "parcel src/index.html",
-    "styleguide": "styleguidist server"
+    "styleguide": "styleguidist server",
+    "test": "yarn build:ts"
   },
   "alias": {
     "preact-context": "preact"
