@@ -9,7 +9,7 @@ export const Button = createComponent(
   ({ disabled, theme }: ButtonProps & { theme: AppTheme }) => {
     return {
       background: disabled ? theme.colors.disabled : theme.colors.accent,
-      border: '1px transparent',
+      border: '1px solid transparent',
       borderRadius: '100em',
       cursor: disabled ? 'default' : 'pointer',
       color: theme.colors.background,
@@ -22,5 +22,6 @@ export const Button = createComponent(
     <button type="button" {...rest}>
       <Text color="inherit">{children}</Text>
     </button>
-  )
+  ),
+  ['type']
 );
