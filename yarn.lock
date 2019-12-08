@@ -4439,6 +4439,21 @@ fela-dom@^11.0.2:
     fela-utils "^11.0.2"
     sort-css-media-queries "^1.4.3"
 
+fela-plugin-extend@^11.0.2:
+  version "11.0.2"
+  resolved "https://registry.yarnpkg.com/fela-plugin-extend/-/fela-plugin-extend-11.0.2.tgz#d67d61bf3a582661dd4ba81fbb7a9bcc2fe2ea0c"
+  integrity sha512-JhmJfwpvS6/jDfKg0CMHVNA4s3BsF+rBb5zVHTX0bGDjDgNAf7qbBAaq7mBnqNCRKX6PpJC5Z/DSoVdNVu8iXQ==
+  dependencies:
+    css-in-js-utils "^3.0.0"
+    fast-loops "^1.0.0"
+    fela-utils "^11.0.2"
+    isobject "^3.0.1"
+
+fela-plugin-logger@^11.0.2:
+  version "11.0.2"
+  resolved "https://registry.yarnpkg.com/fela-plugin-logger/-/fela-plugin-logger-11.0.2.tgz#655f1ae45aa29007b1940ccc40f3d4a1dbab438d"
+  integrity sha512-vdPAGBJ3j+E8ZWZV4C09+3kzW0yETYnFsQWL7Y8ZTApCagfvqBnc6r33FqhshNRbj7jOko/CU6WF19y3qeGkXw==
+
 fela-tools@^11.0.2:
   version "11.0.2"
   resolved "https://registry.yarnpkg.com/fela-tools/-/fela-tools-11.0.2.tgz#01b0a7c1eebe65adf15570a7833d8409f34d1bcc"

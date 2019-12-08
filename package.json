@@ -10,6 +10,8 @@
     "@babel/runtime": "^7.7.5",
     "fela": "^11.0.2",
     "fela-bindings": "^11.0.2",
+    "fela-plugin-extend": "^11.0.2",
+    "fela-plugin-logger": "^11.0.2",
     "preact": "^10.0.5",
     "preact-fela": "^11.0.2"
   },
