@@ -13,7 +13,6 @@ declare module 'preact-fela' {
     component?: ComponentType<Props> | keyof JSX.IntrinsicElements,
     passthrough?: string[]
   ): ComponentType<Props>;
-  export function useFela<T = any>(otherProps?: any): PreactFela<T>;
   export function connect<Props = any>(
     rules: any
   ): (
