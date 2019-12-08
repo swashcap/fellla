@@ -16,7 +16,7 @@ declare module 'preact-fela' {
   export function connect<Props = any>(
     rules: any
   ): (
-    component: ComponentType<Props & { styles: any }>
+    component: ComponentType<Props & { rules: any; styles: any; theme: any }>
   ) => ComponentType<Props>;
 
   export const RendererContext: Context<IRenderer>;

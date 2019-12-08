@@ -58,10 +58,12 @@ export const BaseStack = connect<BaseStackProps>({
     children,
     direction,
     reverse,
+    rules,
     spacing,
     styles,
+    theme,
     ...rest
-  }: BaseStackProps & { styles: any }) => (
+  }) => (
     <div class={styles.root} {...rest}>
       {Array.isArray(children)
         ? children.map((child, i) => (
