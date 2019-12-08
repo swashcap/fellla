@@ -5,9 +5,18 @@ import { AppTheme, AppThemeTextSizes } from '../../theme';
 // Fela's `extend` doesn't work for composition, so work from a private
 // `BaseText` that exposes props
 export const BaseText: FunctionComponent<JSX.HTMLAttributes & {
+  color?: string;
   fontSize?: AppThemeTextSizes;
 }> = createComponent(
-  ({ fontSize, theme }: { fontSize?: string; theme: AppTheme }) => {
+  ({
+    color,
+    fontSize,
+    theme,
+  }: {
+    color?: string;
+    fontSize?: string;
+    theme: AppTheme;
+  }) => {
     const font =
       (fontSize && fontSize === 'large') ||
       fontSize === 'medium' ||
@@ -16,6 +25,7 @@ export const BaseText: FunctionComponent<JSX.HTMLAttributes & {
         : theme.typography.normal;
 
     return {
+      color: color ? color : theme.colors.text,
       marginBottom: 0,
       marginTop: 0,
       ...font,

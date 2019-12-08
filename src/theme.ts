@@ -1,6 +1,15 @@
 export type AppThemeTextSizes = 'small' | 'normal' | 'medium' | 'large';
 
 export interface AppTheme {
+  colors: {
+    accent: string;
+    background: string;
+    disabled: string;
+    text: string;
+  };
+  spacing: {
+    base: string;
+  };
   typography: Record<
     AppThemeTextSizes,
     {
@@ -12,6 +21,15 @@ export interface AppTheme {
 }
 
 export const theme: AppTheme = {
+  colors: {
+    accent: '#ec3e46',
+    background: '#e7e4de',
+    disabled: '#8c8a86',
+    text: '#171717',
+  },
+  spacing: {
+    base: '.5rem',
+  },
   typography: {
     small: {
       fontSize: '87.5%',
