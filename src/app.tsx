@@ -1,7 +1,7 @@
 import { h, render } from 'preact';
 import { ThemeContext } from 'preact-fela';
 
-import { Heading } from './Heading';
+import { Heading } from './components/text/Heading';
 import { RendererProvider } from './RendererProvider';
 import { getRenderer } from './getRenderer';
 import { theme } from './theme';

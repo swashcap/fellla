@@ -1,0 +1,12 @@
+```jsx
+<Grid>
+  <div>One</div>
+  <div>Two</div>
+  <div>Three</div>
+</Grid>
+<Grid>
+  <div>Four</div>
+  <div>Five</div>
+  <div>Six</div>
+</Grid>
+```

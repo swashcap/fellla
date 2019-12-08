@@ -1,3 +1,5 @@
+export type AppThemeSpacing = 'small' | 'normal';
+
 export type AppThemeTextSizes = 'small' | 'normal' | 'medium' | 'large';
 
 export interface AppTheme {
@@ -7,9 +9,7 @@ export interface AppTheme {
     disabled: string;
     text: string;
   };
-  spacing: {
-    base: string;
-  };
+  spacing: Record<AppThemeSpacing, string>;
   typography: Record<
     AppThemeTextSizes,
     {
@@ -28,7 +28,8 @@ export const theme: AppTheme = {
     text: '#171717',
   },
   spacing: {
-    base: '.5rem',
+    normal: '1rem',
+    small: '.5rem',
   },
   typography: {
     small: {

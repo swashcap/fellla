@@ -13,7 +13,7 @@ export const TextInput: FunctionComponent<TextInputProps> = createComponent(
     color: disabled ? theme.colors.disabled : theme.colors.text,
     display: 'block',
     font: 'inherit',
-    padding: `${theme.spacing.base} calc(${theme.spacing.base} * 2)`,
+    padding: `${theme.spacing.small} ${theme.spacing.normal}`,
     width: '100%',
 
     '::placeholder': {

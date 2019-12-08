@@ -15,7 +15,7 @@ export const Button: FunctionComponent<ButtonProps> = createComponent(
       color: theme.colors.background,
       font: 'inherit',
       margin: 0,
-      padding: `${theme.spacing.base} calc(${theme.spacing.base} * 2)`,
+      padding: `${theme.spacing.small} ${theme.spacing.normal}`,
     };
   },
   ({ children, ...rest }: ButtonProps) => (
