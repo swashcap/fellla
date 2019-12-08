@@ -34,13 +34,12 @@
   },
   "scripts": {
     "build": "run-s build:ts build:parcel",
-    "build:parcel": "parcel build src/index.html",
+    "build:parcel": "parcel build src/index.html && ./scripts/performance.sh",
     "build:ts": "tsc --noEmit",
     "clean": "./scripts/clean.sh",
     "format": "prettier --write '*.js' '{src,types}/**/*.{html,ts,tsx}'",
     "start": "parcel src/index.html",
-    "styleguide": "styleguidist server",
-    "test": "yarn build:ts"
+    "styleguide": "styleguidist server"
   },
   "alias": {
     "preact-context": "preact"
