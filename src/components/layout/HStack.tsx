@@ -4,7 +4,7 @@ import { BaseStack, BaseStackAlignment, BaseStackProps } from './BaseStack';
 export type HStackAlignment = 'center' | 'end' | 'start';
 
 export type HStackProps = JSX.HTMLAttributes<HTMLDivElement> &
-  Pick<BaseStackProps, 'reverse' | 'spacing'> & {
+  Pick<BaseStackProps, 'crossAlignment' | 'reverse' | 'spacing'> & {
     alignment?: HStackAlignment;
   };
 

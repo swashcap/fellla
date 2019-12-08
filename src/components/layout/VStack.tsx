@@ -4,7 +4,7 @@ import { BaseStack, BaseStackAlignment, BaseStackProps } from './BaseStack';
 export type VStackAlignment = 'bottom' | 'center' | 'top';
 
 export type VStackProps = JSX.HTMLAttributes<HTMLDivElement> &
-  Pick<BaseStackProps, 'reverse' | 'spacing'> & {
+  Pick<BaseStackProps, 'crossAlignment' | 'reverse' | 'spacing'> & {
     alignment?: VStackAlignment;
   };
 

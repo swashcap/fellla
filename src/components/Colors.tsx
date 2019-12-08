@@ -22,7 +22,7 @@ export const Colors = () => {
         const backgroundColor = theme.colors[color as keyof AppTheme['colors']];
 
         return (
-          <VStack key={color} spacing="normal">
+          <VStack crossAlignment="center" key={color} spacing="normal">
             <div
               class={css({
                 backgroundColor,
