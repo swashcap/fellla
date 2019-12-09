@@ -14,10 +14,9 @@ const style = {
     borderRadius: '4px',
     borderStyle: 'solid',
     borderWidth: '1px',
-    cursor: disabled ? 'default' : 'pointer',
     display: 'block',
-    height: '1.5rem',
-    width: '1.5rem',
+    height: '1.25rem',
+    width: '1.25rem',
 
     ':focus': getFocusStyles(theme),
 
@@ -25,7 +24,7 @@ const style = {
       color: disabled ? theme.colors.disabled : theme.colors.accent,
       content: checked ? '"✓"' : '',
       display: 'block',
-      fontSize: '125%',
+      fontSize: '100%',
       lineHeight: 1,
       textAlign: 'center',
     },
@@ -35,20 +34,29 @@ const style = {
     position: 'absolute',
     zIndex: -1,
   },
+  root: ({ disabled, theme }: CheckboxInputProps & { theme: AppTheme }) => ({
+    cursor: disabled ? 'default' : 'pointer',
+    display: 'block',
+    padding: theme.spacing.small,
+  }),
 };
 
-export type CheckboxInputProps = JSX.HTMLAttributes<HTMLInputElement>;
+export interface CheckboxInputProps
+  extends JSX.HTMLAttributes<HTMLLabelElement> {
+  inputProps?: JSX.HTMLAttributes<HTMLInputElement>;
+}
 
 export const CheckboxInput: FunctionComponent<CheckboxInputProps> = ({
   class: className,
+  inputProps,
   ...rest
 }) => {
   const css = useCss(rest);
 
   return (
-    <Fragment>
-      <span class={css(style.indicator, className)} />
-      <input class={css(style.input)} type="checkbox" {...rest} />
-    </Fragment>
+    <label class={css(style.root, className)} {...rest}>
+      <span class={css(style.indicator)} />
+      <input class={css(style.input)} type="checkbox" {...inputProps} />
+    </label>
   );
 };

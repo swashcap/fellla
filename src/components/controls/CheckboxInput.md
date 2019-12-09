@@ -2,7 +2,7 @@
 import { HStack } from '../layout/HStack'
 ;
 <HStack spacing="normal">
-  <CheckboxInput />
+  <CheckboxInput onClick={console.log} />
   <CheckboxInput checked />
 </HStack>
 ```
