@@ -24,17 +24,18 @@ const alignmentToJustify = new Map<BaseStackAlignment, string>([
   [BaseStackAlignment.START, 'flex-start'],
 ]);
 
-export type BaseStackCrossAlignment = 'center' | 'end' | 'start';
+export type BaseStackCrossAlignment = 'center' | 'end' | 'start' | 'stretch';
 
 const crossAlignmentToItems = new Map<BaseStackCrossAlignment, string>([
   ['center', 'center'],
   ['end', 'flex-end'],
   ['start', 'flex-start'],
+  ['stretch', 'stretch'],
 ]);
 
 export interface BaseStackProps extends JSX.HTMLAttributes<HTMLDivElement> {
   alignment: BaseStackAlignment;
-  crossAlignment?: 'center' | 'end' | 'start';
+  crossAlignment?: 'center' | 'end' | 'start' | 'stretch';
   direction: 'horizontal' | 'vertical';
   reverse?: boolean;
   spacing?: AppThemeSpacing;
@@ -70,7 +71,7 @@ export const BaseStack = connect<BaseStackProps>({
   },
   root: ({
     alignment,
-    crossAlignment = 'start',
+    crossAlignment = 'stretch',
     direction,
     reverse = false,
   }: BaseStackProps & { theme: AppTheme }) => {
