@@ -4,10 +4,10 @@ import { Text } from '../text/Text';
 import { AppTheme } from '../../theme';
 import { getFocusStyles } from '../../styles/focus';
 
-export type ButtonProps = JSX.HTMLAttributes<HTMLButtonElement>;
+export type PrimaryButtonProps = JSX.HTMLAttributes<HTMLButtonElement>;
 
-export const Button = createComponent(
-  ({ disabled, theme }: ButtonProps & { theme: AppTheme }) => {
+export const PrimaryButton = createComponent(
+  ({ disabled, theme }: PrimaryButtonProps & { theme: AppTheme }) => {
     return {
       background: disabled ? theme.colors.disabled : theme.colors.accent,
       border: '1px solid transparent',
@@ -21,10 +21,10 @@ export const Button = createComponent(
       ':focus': getFocusStyles(theme),
     };
   },
-  ({ children, ...rest }: ButtonProps) => (
+  ({ children, ...rest }: PrimaryButtonProps) => (
     <button type="button" {...rest}>
       <Text color="inherit">{children}</Text>
     </button>
   ),
-  ['type']
+  ['onClick', 'type']
 );

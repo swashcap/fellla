@@ -1,7 +1,7 @@
 import { FunctionComponent, JSX, h } from 'preact';
 
 import { TextInput } from './TextInput';
-import { Button } from './Button';
+import { PrimaryButton } from './PrimaryButton';
 import { HStack } from '../layout/HStack';
 
 export const TextForm: FunctionComponent<JSX.HTMLAttributes<
@@ -13,7 +13,7 @@ export const TextForm: FunctionComponent<JSX.HTMLAttributes<
         <HStack.Item grow={2}>
           <TextInput placeholder="Enter" />
         </HStack.Item>
-        <Button type="submit">Submit</Button>
+        <PrimaryButton type="submit">Submit</PrimaryButton>
       </HStack>
     </form>
   );
