@@ -1,4 +1,4 @@
-import { JSX } from 'preact';
+import { JSX, h } from 'preact';
 import { createComponent } from 'preact-fela';
 import { AppTheme } from '../../theme';
 import { getFocusStyles } from '../../styles/focus';
@@ -27,5 +27,5 @@ export const TextInput = createComponent<TextInputProps>(
     ':focus': getFocusStyles(theme),
   }),
   'input',
-  ['disabled', 'placeholder', 'value']
+  ['disabled', 'placeholder', 'ref', 'value']
 );

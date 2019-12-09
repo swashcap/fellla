@@ -1,6 +1,6 @@
 declare module 'preact-fela' {
   import { IRenderer } from 'fela';
-  import { ComponentType, Context, JSX } from 'preact';
+  import { ComponentClass, ComponentType, Context, JSX, Ref } from 'preact';
 
   export interface ConnectedProps<T = any> {
     rules: any;
@@ -12,7 +12,7 @@ declare module 'preact-fela' {
     rules: any,
     component?: ComponentType<Props> | keyof JSX.IntrinsicElements,
     passthrough?: string[] | Function
-  ): ComponentType<Props>;
+  ): ComponentClass<Props & { innerRef?: Ref<any> }>;
   export function connect<Props = any, Rules extends Record<string, any> = any>(
     rules: Rules
   ): (component: ComponentType<Props & ConnectedProps>) => ComponentType<Props>;
