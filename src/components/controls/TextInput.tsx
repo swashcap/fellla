@@ -7,7 +7,7 @@ export type TextInputProps = JSX.HTMLAttributes<HTMLInputElement>;
 
 export const TextInput = createComponent<TextInputProps>(
   ({ disabled, theme }: TextInputProps & { theme: AppTheme }) => ({
-    background: theme.colors.background,
+    background: theme.colors.inputBackground,
     borderColor: disabled ? theme.colors.disabled : theme.colors.text,
     borderRadius: '100em',
     borderStyle: 'solid',

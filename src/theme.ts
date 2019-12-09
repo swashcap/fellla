@@ -7,6 +7,7 @@ export interface AppTheme {
     accent: string;
     background: string;
     disabled: string;
+    inputBackground: string;
     text: string;
   };
   spacing: Record<AppThemeSpacing, string>;
@@ -25,6 +26,7 @@ export const theme: AppTheme = {
     accent: '#ec3e46',
     background: '#e7e4de',
     disabled: '#8c8a86',
+    inputBackground: '#fff',
     text: '#171717',
   },
   spacing: {
