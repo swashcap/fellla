@@ -1,5 +1,10 @@
-import { FunctionComponent, JSX, h } from 'preact';
-import { BaseStack, BaseStackAlignment, BaseStackProps } from './BaseStack';
+import { Component, JSX, h } from 'preact';
+import {
+  BaseStack,
+  BaseStackAlignment,
+  BaseStackProps,
+  BaseStackItem,
+} from './BaseStack';
 
 export type HStackAlignment = 'center' | 'end' | 'start';
 
@@ -17,13 +22,16 @@ const alignmentMap = new Map<HStackAlignment, BaseStackAlignment>([
 /**
  * Vertically stack children elements.
  */
-export const HStack: FunctionComponent<HStackProps> = ({
-  alignment = 'start',
-  ...rest
-}) => (
-  <BaseStack
-    alignment={alignmentMap.get(alignment)!}
-    direction="horizontal"
-    {...rest}
-  />
-);
+export class HStack extends Component<HStackProps> {
+  static Item = BaseStackItem;
+
+  render({ alignment = 'start', ...rest }: HStackProps) {
+    return (
+      <BaseStack
+        alignment={alignmentMap.get(alignment)!}
+        direction="horizontal"
+        {...rest}
+      />
+    );
+  }
+}

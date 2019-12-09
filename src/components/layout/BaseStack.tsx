@@ -1,5 +1,11 @@
-import { JSX, h } from 'preact';
-import { connect } from 'preact-fela';
+import {
+  JSX,
+  cloneElement,
+  h,
+  isValidElement,
+  FunctionComponent,
+} from 'preact';
+import { connect, createComponent } from 'preact-fela';
 import { AppTheme, AppThemeSpacing } from '../../theme';
 
 /**
@@ -33,6 +39,15 @@ export interface BaseStackProps extends JSX.HTMLAttributes<HTMLDivElement> {
   reverse?: boolean;
   spacing?: AppThemeSpacing;
 }
+
+export interface BaseStackItemProps extends JSX.HTMLAttributes {
+  grow?: number;
+}
+
+export const BaseStackItem = createComponent<BaseStackItemProps>(
+  ({ grow: flexGrow }: BaseStackItemProps) =>
+    flexGrow ? { flexGrow } : undefined
+);
 
 /**
  * A primitive stacking component.
@@ -82,11 +97,21 @@ export const BaseStack = connect<BaseStackProps>({
     ...rest
   }) => (
     <div class={styles.root} {...rest}>
-      {Array.isArray(children)
-        ? children.map((child, i) => (
-            <div class={i > 0 ? styles.item : undefined}>{child}</div>
-          ))
-        : children}
+      {Array.isArray(children) ? (
+        children.map((child, i) => {
+          const className = i > 0 ? styles.item : undefined;
+
+          if (!child) {
+            return;
+          } else if (isValidElement(child) && child.type === BaseStackItem) {
+            return cloneElement(child, { ...child.props, className });
+          }
+
+          return <BaseStackItem className={className}>{child}</BaseStackItem>;
+        })
+      ) : (
+        <BaseStackItem>{children}</BaseStackItem>
+      )}
     </div>
   )
 );
