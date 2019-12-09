@@ -2,10 +2,17 @@ import { JSX } from 'preact';
 import { createComponent } from 'preact-fela';
 import { AppTheme, AppThemeTextSizes } from '../../theme';
 
-interface TextProps extends JSX.HTMLAttributes {
+type GetAttributes<E> = E extends keyof JSX.IntrinsicElements
+  ? JSX.IntrinsicElements[E]
+  : JSX.IntrinsicElements['span'];
+
+type TextProps<E extends keyof JSX.IntrinsicElements = any> = GetAttributes<
+  E
+> & {
+  as?: E;
   color?: string;
   fontSize?: AppThemeTextSizes;
-}
+};
 
 export const Text = createComponent<TextProps>(
   ({
@@ -31,5 +38,6 @@ export const Text = createComponent<TextProps>(
       ...font,
     };
   },
-  'span'
+  'span',
+  Object.keys
 );
