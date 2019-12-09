@@ -11,7 +11,7 @@ declare module 'preact-fela' {
   export function createComponent<Props = any>(
     rules: any,
     component?: ComponentType<Props> | keyof JSX.IntrinsicElements,
-    passthrough?: string[]
+    passthrough?: string[] | Function
   ): ComponentType<Props>;
   export function connect<Props = any, Rules extends Record<string, any> = any>(
     rules: Rules
