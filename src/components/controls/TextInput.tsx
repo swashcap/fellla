@@ -27,5 +27,5 @@ export const TextInput = createComponent<TextInputProps>(
     ':focus': getFocusStyles(theme),
   }),
   'input',
-  ['placeholder', 'value']
+  ['disabled', 'placeholder', 'value']
 );
